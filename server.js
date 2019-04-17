@@ -57,9 +57,7 @@ app.post('/webhookdflow', function(request, response) {
     cep_candidato  = request.body.queryResult.parameters['cep_candidato'];
     email_candidato= request.body.queryResult.parameters['email_candidato'];
     
-    cpf_candidato = cpf_candidato.replace(".", "");
-    cpf_candidato = cpf_candidato.replace(".", "");
-    cpf_candidato = cpf_candidato.replace("-", "");
+    cpf_candidato = cpfReplace(cpf_candidato);
     
     result = valData("1",nome_candidato,cpf_candidato,cep_candidato,aluno_curso,email_candidato);
     
